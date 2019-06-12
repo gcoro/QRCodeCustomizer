@@ -31,7 +31,7 @@ const App: React.FC = () => {
 					/>
 					<SelectField
 						name='ecLevel'
-						options={['L', 'M', 'H']}
+						options={['L', 'M', 'Q', 'H']}
 						handleChange={handleChange}
 					/>
 					<CheckboxField
@@ -46,7 +46,7 @@ const App: React.FC = () => {
 						max={300}
 					/>
 					<InputField
-						name='padding'
+						name='quietZone'
 						type='range'
 						handleChange={handleChange}
 						min={20}
@@ -87,6 +87,11 @@ const App: React.FC = () => {
 						min={0}
 						max={1}
 						step={0.1}
+					/>
+                    <SelectField
+						name='qrStyle'
+						options={['squares', 'dots']}
+						handleChange={handleChange}
 					/>
 				</div>
 			</div>
