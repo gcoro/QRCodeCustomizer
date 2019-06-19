@@ -16,13 +16,13 @@ export const CheckboxField = ({ name, handleChange }: ICheckboxFieldProps) => {
 	};
 
 	return (
-		<>
+		<div style={{ display: 'flex', flexDirection: 'row', marginBottom: '6px', alignItems: 'center', paddingTop: '6px', paddingBottom: '6px' }}>
 			<input
 				type='checkbox'
 				name={name}
 				onChange={handleCheckboxToggle}
 			/>
 			<label htmlFor={name}>{name}</label>
-		</>
+		</div>
 	);
 }

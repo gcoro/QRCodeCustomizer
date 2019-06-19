@@ -25,13 +25,13 @@ export const ImageUploadField = ({ name, handleChange }: IImageUploadFieldProps)
 	}
 
 	return (
-		<>
+		<div style={{ display: 'flex', flexDirection: 'column', marginBottom: '6px' }}>
 			<label>{name}</label>
 			<input
 				type='file'
 				accept='image/*'
 				name={name}
 				onChange={e => retrievePathFile(e.target.files)} />
-		</>
+		</div>
 	);
 }
