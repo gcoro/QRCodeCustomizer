@@ -5,12 +5,26 @@ import { SelectField } from './components/SelectField';
 import { ImageUploadField } from './components/ImageUploadField';
 import { CheckboxField } from './components/CheckboxField';
 import ReactJson from 'react-json-view';
+import html2canvas from 'html2canvas';
 
 const App: React.FC = () => {
 	const [state, setState] = useState({});
 
 	const handleChange = ({ target }: any) => {
 		setState(prevState => ({ ...prevState, [target.name]: target.value }))
+	}
+
+	const handleDownload = () => {
+		// const canvas = document.querySelector('#react-qrcode-logo');
+		// ^ fixme - doing like above, quietZone does not appear in the downloaded image
+
+		html2canvas(document.querySelector('#react-qrcode-logo') as any)
+			.then(function (canvas) {
+				const link = document.createElement('a');
+				link.download = 'filename.png';
+				link.href = canvas.toDataURL();
+				link.click();
+			});
 	}
 
 	return (
@@ -108,6 +122,8 @@ const App: React.FC = () => {
 					<QRCode {...state} />
 				</div>
 			</div>
+			<button type='button' onClick={handleDownload}
+				style={{ margin: '20px' }}>Download QR Code</button>
 			<ReactJson src={state} />
 		</div>
 	);
