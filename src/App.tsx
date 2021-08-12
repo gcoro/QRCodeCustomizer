@@ -124,7 +124,19 @@ const App: React.FC = () => {
 			</div>
 			<button type='button' onClick={handleDownload}
 				style={{ margin: '20px' }}>Download QR Code</button>
-			<ReactJson src={state} />
+			<div style={{ marginLeft: '15px' }}>
+				<ReactJson src={state} style={{ marginBottom: 40 }} />
+				<a
+					className="App-link"
+					href="https://reactjs.org"
+					target="_blank"
+					rel="noopener noreferrer"
+					style={{ fontSize: 12 }}
+				>
+					Learn React
+				</a>
+			</div>
+
 		</div>
 	);
 }
