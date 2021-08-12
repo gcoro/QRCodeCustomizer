@@ -6,14 +6,16 @@ interface IInputFieldProps {
 	min?: number;
 	max?: number;
 	step?: number;
-	defaultValue?: string;
+	defaultValue?: string | number;
 	handleChange: (target: any) => void;
+	hideLabel?: boolean;
+	value?: string | number;
 }
 
-export const InputField = ({ name, type, handleChange, min, max, step, defaultValue }: IInputFieldProps) => {
+export const InputField = ({ name, type, handleChange, min, max, step, defaultValue, hideLabel, value }: IInputFieldProps) => {
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column', marginBottom: '6px' }}>
-			<label>{name}</label>
+			{!hideLabel && <label>{name}</label>}
 			<input
 				type={type}
 				id={name}
@@ -23,6 +25,7 @@ export const InputField = ({ name, type, handleChange, min, max, step, defaultVa
 				max={max}
 				step={step || 1}
 				defaultValue={defaultValue}
+				value={value}
 			/>
 		</div>
 	);
