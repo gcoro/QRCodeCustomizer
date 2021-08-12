@@ -15,13 +15,10 @@ const App: React.FC = () => {
 	}
 
 	const handleDownload = () => {
-		// const canvas = document.querySelector('#react-qrcode-logo');
-		// ^ fixme - doing like above, quietZone does not appear in the downloaded image
-
 		html2canvas(document.querySelector('#react-qrcode-logo') as any)
 			.then(function (canvas) {
 				const link = document.createElement('a');
-				link.download = 'filename.png';
+				link.download = 'react-qrcode-logo.png';
 				link.href = canvas.toDataURL();
 				link.click();
 			});
