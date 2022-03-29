@@ -125,6 +125,10 @@ const App: React.FC = () => {
 								options={['squares', 'dots']}
 								handleChange={handleChange}
 							/>
+							<CheckboxField
+								name='removeQrCodeBehindLogo'
+								handleChange={handleChange}
+							/>
 						</div>
 					</div>
 					<div style={{ padding: '15px' }}>
