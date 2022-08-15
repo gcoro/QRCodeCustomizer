@@ -8,15 +8,7 @@ import ReactJson from 'react-json-view';
 import html2canvas from 'html2canvas';
 
 const App: React.FC = () => {
-	const [state, setState] = useState({
-		// we init this cause is more practical with TS, but eyeRadius is an optional prop
-		eyeradius_0_outer_0: 0, eyeradius_0_outer_1: 0, eyeradius_0_outer_2: 0, eyeradius_0_outer_3: 0,
-		eyeradius_0_inner_0: 0, eyeradius_0_inner_1: 0, eyeradius_0_inner_2: 0, eyeradius_0_inner_3: 0,
-		eyeradius_1_outer_0: 0, eyeradius_1_outer_1: 0, eyeradius_1_outer_2: 0, eyeradius_1_outer_3: 0,
-		eyeradius_1_inner_0: 0, eyeradius_1_inner_1: 0, eyeradius_1_inner_2: 0, eyeradius_1_inner_3: 0,
-		eyeradius_2_outer_0: 0, eyeradius_2_outer_1: 0, eyeradius_2_outer_2: 0, eyeradius_2_outer_3: 0,
-		eyeradius_2_inner_0: 0, eyeradius_2_inner_1: 0, eyeradius_2_inner_2: 0, eyeradius_2_inner_3: 0
-	});
+	const [state, setState] = useState<{ [key: string]: any }>({});
 
 	const handleChange = ({ target }: any) => {
 		setState(prevState => ({ ...prevState, [target.name]: target.value }))
@@ -175,6 +167,68 @@ const App: React.FC = () => {
 							</div>
 						</div>
 					</div>
+					<div style={{ padding: '15px' }}>
+						<p>eyeColor</p>
+						<div style={{ display: 'flex', flexDirection: 'row' }}>
+							<div>
+								<p style={{ fontSize: 14 }}>Top left eye</p>
+								<p style={{ fontSize: 12 }}>Outer</p>
+								<InputField
+									name='eyecolor_0_outer'
+									type='color'
+									defaultValue={state.fgColor ?? '#000000'}
+									handleChange={handleChange}
+									hideLabel={true}
+								/>
+								<p style={{ fontSize: 12 }}>Inner</p>
+								<InputField
+									name='eyecolor_0_inner'
+									type='color'
+									defaultValue={state.fgColor ?? '#000000'}
+									handleChange={handleChange}
+									hideLabel={true}
+								/>
+							</div>
+							<div>
+								<p style={{ fontSize: 14 }}>Top right eye</p>
+								<p style={{ fontSize: 12 }}>Outer</p>
+								<InputField
+									name='eyecolor_1_outer'
+									type='color'
+									defaultValue={state.fgColor ?? '#000000'}
+									handleChange={handleChange}
+									hideLabel={true}
+								/>
+								<p style={{ fontSize: 12 }}>Inner</p>
+								<InputField
+									name='eyecolor_1_inner'
+									type='color'
+									defaultValue={state.fgColor ?? '#000000'}
+									handleChange={handleChange}
+									hideLabel={true}
+								/>
+							</div>
+							<div>
+								<p style={{ fontSize: 14 }}>Bottom left eye</p>
+								<p style={{ fontSize: 12 }}>Outer</p>
+								<InputField
+									name='eyecolor_2_outer'
+									type='color'
+									defaultValue={state.fgColor ?? '#000000'}
+									handleChange={handleChange}
+									hideLabel={true}
+								/>
+								<p style={{ fontSize: 12 }}>Inner</p>
+								<InputField
+									name='eyecolor_2_inner'
+									type='color'
+									defaultValue={state.fgColor ?? '#000000'}
+									handleChange={handleChange}
+									hideLabel={true}
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div style={{
 					width: 400,
@@ -186,23 +240,39 @@ const App: React.FC = () => {
 					borderRadius: '50px',
 					backgroundColor: '#d4fafc'
 				}}>
-					<QRCode {...{
-						...state,
-						eyeRadius: [ // build eyeRadius manually
-							{
-								outer: [state.eyeradius_0_outer_0, state.eyeradius_0_outer_1, state.eyeradius_0_outer_2, state.eyeradius_0_outer_3],
-								inner: [state.eyeradius_0_inner_0, state.eyeradius_0_inner_1, state.eyeradius_0_inner_2, state.eyeradius_0_inner_3],
-							},
-							{
-								outer: [state.eyeradius_1_outer_0, state.eyeradius_1_outer_1, state.eyeradius_1_outer_2, state.eyeradius_1_outer_3],
-								inner: [state.eyeradius_1_inner_0, state.eyeradius_1_inner_1, state.eyeradius_1_inner_2, state.eyeradius_1_inner_3],
-							},
-							{
-								outer: [state.eyeradius_2_outer_0, state.eyeradius_2_outer_1, state.eyeradius_2_outer_2, state.eyeradius_2_outer_3],
-								inner: [state.eyeradius_2_inner_0, state.eyeradius_2_inner_1, state.eyeradius_2_inner_2, state.eyeradius_2_inner_3],
-							}
-						]
-					}} />
+					<QRCode
+						{...{
+							...state,
+							eyeRadius: [ // build eyeRadius manually
+								{
+									outer: [state.eyeradius_0_outer_0, state.eyeradius_0_outer_1, state.eyeradius_0_outer_2, state.eyeradius_0_outer_3],
+									inner: [state.eyeradius_0_inner_0, state.eyeradius_0_inner_1, state.eyeradius_0_inner_2, state.eyeradius_0_inner_3],
+								},
+								{
+									outer: [state.eyeradius_1_outer_0, state.eyeradius_1_outer_1, state.eyeradius_1_outer_2, state.eyeradius_1_outer_3],
+									inner: [state.eyeradius_1_inner_0, state.eyeradius_1_inner_1, state.eyeradius_1_inner_2, state.eyeradius_1_inner_3],
+								},
+								{
+									outer: [state.eyeradius_2_outer_0, state.eyeradius_2_outer_1, state.eyeradius_2_outer_2, state.eyeradius_2_outer_3],
+									inner: [state.eyeradius_2_inner_0, state.eyeradius_2_inner_1, state.eyeradius_2_inner_2, state.eyeradius_2_inner_3],
+								}
+							],
+							eyeColor: [ // build eyeColor manually
+								{
+									outer: state.eyecolor_0_outer ?? state.fgColor ?? '#000000',
+									inner: state.eyecolor_0_inner ?? state.fgColor ?? '#000000'
+								},
+								{
+									outer: state.eyecolor_1_outer ?? state.fgColor ?? '#000000',
+									inner: state.eyecolor_1_inner ?? state.fgColor ?? '#000000'
+								},
+								{
+									outer: state.eyecolor_2_outer ?? state.fgColor ?? '#000000',
+									inner: state.eyecolor_2_inner ?? state.fgColor ?? '#000000'
+								},
+							]
+						}}
+					/>
 				</div>
 			</div>
 			<button type='button' onClick={handleDownload}
