@@ -61,14 +61,14 @@ const App: React.FC = () => {
 								type='range'
 								handleChange={handleChange}
 								min={100}
-								max={250}
+								max={500}
 							/>
 							<InputField
 								name='quietZone'
 								type='range'
 								handleChange={handleChange}
 								min={20}
-								max={50}
+								max={80}
 							/>
 							<div style={{ display: 'flex', flexDirection: 'row', marginTop: '4px', justifyContent: 'space-around' }}>
 								<InputField
@@ -95,14 +95,14 @@ const App: React.FC = () => {
 								type='range'
 								handleChange={handleChange}
 								min={20}
-								max={250}
+								max={500}
 							/>
 							<InputField
 								name='logoHeight'
 								type='range'
 								handleChange={handleChange}
 								min={20}
-								max={250}
+								max={500}
 							/>
 							<InputField
 								name='logoOpacity'
@@ -231,8 +231,8 @@ const App: React.FC = () => {
 					</div>
 				</div>
 				<div style={{
-					width: 400,
-					height: 400,
+					width: 700,
+					height: 700,
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
