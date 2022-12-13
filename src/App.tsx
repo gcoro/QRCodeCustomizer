@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { InputField } from './components/InputField';
 import { QRCode } from 'react-qrcode-logo';
 import { SelectField } from './components/SelectField';
+import { TextArea } from './components/TextArea';
 import { ImageUploadField } from './components/ImageUploadField';
 import { CheckboxField } from './components/CheckboxField';
 import ReactJson from 'react-json-view';
@@ -42,9 +43,8 @@ const App: React.FC = () => {
 				<div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
 					<div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
 						<div style={{ width: '240px', display: 'flex', flexDirection: 'column', padding: '15px' }}>
-							<InputField
+							<TextArea
 								name='value'
-								type='text'
 								handleChange={handleChange}
 							/>
 							<SelectField
