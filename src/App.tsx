@@ -128,6 +128,7 @@ const App: React.FC = () => {
 								min={0}
 								max={20}
 								step={1}
+								defaultValue={0}
 							/>
 						</div>
 					</div>
