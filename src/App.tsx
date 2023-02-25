@@ -111,6 +111,7 @@ const App: React.FC = () => {
 								min={0}
 								max={1}
 								step={0.1}
+								defaultValue={1}
 							/>
 							<SelectField
 								name='qrStyle'
