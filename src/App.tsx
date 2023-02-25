@@ -121,6 +121,14 @@ const App: React.FC = () => {
 								name='removeQrCodeBehindLogo'
 								handleChange={handleChange}
 							/>
+							<InputField
+								name='logoPadding'
+								type='range'
+								handleChange={handleChange}
+								min={0}
+								max={20}
+								step={1}
+							/>
 						</div>
 					</div>
 					<div style={{ padding: '15px' }}>
@@ -241,6 +249,7 @@ const App: React.FC = () => {
 					backgroundColor: '#d4fafc'
 				}}>
 					<QRCode
+						logoOnLoad={() => console.log('logo loaded')}
 						{...{
 							...state,
 							eyeRadius: [ // build eyeRadius manually
