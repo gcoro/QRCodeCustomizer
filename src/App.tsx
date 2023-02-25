@@ -130,6 +130,11 @@ const App: React.FC = () => {
 								step={1}
 								defaultValue={0}
 							/>
+							<SelectField
+								name='logoPaddingStyle'
+								options={['square', 'circle']}
+								handleChange={handleChange}
+							/>
 						</div>
 					</div>
 					<div style={{ padding: '15px' }}>
