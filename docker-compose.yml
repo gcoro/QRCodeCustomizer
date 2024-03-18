@@ -1,0 +1,16 @@
+version: '3.3'
+networks:
+  qrcode-customizer-network:
+    name: qrcode-customizer-network
+    ipam:
+      driver: default
+services:
+  qrcode-customizer:
+    container_name: qrcode-customizer
+    image: qrcode-customizer
+    build: .
+    env_file: .env
+    ports:
+      - '${PORT:-3000}:${PORT:-3000}'
+    networks:
+      - qrcode-customizer-network
