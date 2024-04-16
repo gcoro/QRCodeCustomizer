@@ -115,7 +115,7 @@ const App: React.FC = () => {
 							/>
 							<SelectField
 								name='qrStyle'
-								options={['squares', 'dots']}
+								options={['squares', 'dots', 'fluid']}
 								handleChange={handleChange}
 							/>
 							<CheckboxField
