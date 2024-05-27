@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { MutableRefObject, useRef, useState } from 'react';
 import { InputField } from './components/InputField';
 import { QRCode } from 'react-qrcode-logo';
 import { SelectField } from './components/SelectField';
@@ -6,23 +6,17 @@ import { TextArea } from './components/TextArea';
 import { ImageUploadField } from './components/ImageUploadField';
 import { CheckboxField } from './components/CheckboxField';
 import ReactJson from 'react-json-view';
-import html2canvas from 'html2canvas';
 
 const App: React.FC = () => {
 	const [state, setState] = useState<{ [key: string]: any }>({});
+	const ref = useRef<QRCode>()
 
 	const handleChange = ({ target }: any) => {
 		setState(prevState => ({ ...prevState, [target.name]: target.value }))
 	}
 
 	const handleDownload = () => {
-		html2canvas(document.querySelector('#react-qrcode-logo') as any)
-			.then(function (canvas) {
-				const link = document.createElement('a');
-				link.download = 'react-qrcode-logo.png';
-				link.href = canvas.toDataURL();
-				link.click();
-			});
+		ref.current?.download()
 	}
 
 	const buildEyeRadiusInput = (id: string) => {
@@ -256,7 +250,8 @@ const App: React.FC = () => {
 					backgroundColor: '#d4fafc'
 				}}>
 					<QRCode
-						logoOnLoad={() => console.log('logo loaded')}
+						ref={ref as MutableRefObject<QRCode>}
+						logoOnLoad={(e) => console.log('logo loaded', e)}
 						{...{
 							...state,
 							eyeRadius: [ // build eyeRadius manually
