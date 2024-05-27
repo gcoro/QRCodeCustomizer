@@ -6,7 +6,7 @@ Built using create-react-app.
 ## running the example
 In the root folder of the project run
 
-`npm install`
+`npm install --legacy-peer-deps`
 
 `npm start`
 
