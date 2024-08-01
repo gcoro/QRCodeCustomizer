@@ -13,3 +13,7 @@ In the root folder of the project run
 `npm start`
 
 The project will be reacheable in your browser at localhost:3000
+
+## online demo 
+
+Try it [here](https://gcoro.github.io/QRCodeCustomizer/)
