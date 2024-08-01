@@ -240,14 +240,15 @@ const App: React.FC = () => {
 					</div>
 				</div>
 				<div style={{
-					width: 700,
-					height: 700,
+					width: 750,
+					height: 750,
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
-					border: '1px solid #d4fafc',
+					border: '1px solid #ffcfdc',
 					borderRadius: '50px',
-					backgroundColor: '#d4fafc'
+					backgroundColor: '#ffcfdc',
+					flexDirection: 'column'
 				}}>
 					<QRCode
 						ref={ref as MutableRefObject<QRCode>}
@@ -284,10 +285,11 @@ const App: React.FC = () => {
 							]
 						}}
 					/>
+					<button type='button' onClick={handleDownload} style={{ margin: '20px' }}>
+						Download QR Code
+					</button>
 				</div>
 			</div>
-			<button type='button' onClick={handleDownload}
-				style={{ margin: '20px' }}>Download QR Code</button>
 			<div style={{ marginLeft: '15px' }}>
 				<p>State snapshot (debug purposes)</p>
 				<ReactJson src={state} style={{ marginBottom: 40 }} />
