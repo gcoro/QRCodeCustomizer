@@ -130,6 +130,15 @@ const App: React.FC = () => {
 								options={['square', 'circle']}
 								handleChange={handleChange}
 							/>
+							<InputField
+								name='logoPaddingRadius'
+								type='range'
+								handleChange={handleChange}
+								min={0}
+								max={100}
+								step={1}
+								defaultValue={0}
+							/>
 						</div>
 					</div>
 					<div style={{ padding: '15px' }}>
