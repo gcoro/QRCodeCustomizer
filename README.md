@@ -1,19 +1,20 @@
+
 # QRCodeCustomizer
 
 Example project for react-qrcode-logo package.
 
-Built using create-react-app.
+Built using React + TypeScript + Vite
 
 ## running the example
 
 In the root folder of the project run
 
-`npm install --legacy-peer-deps`
+`npm install`
 
-`npm start`
+`npm run dev`
 
-The project will be reacheable in your browser at localhost:3000
+The project will be reacheable in your browser at localhost:5173
 
-## online demo 
+## online demo
 
 Try it [here](https://gcoro.github.io/QRCodeCustomizer/)
