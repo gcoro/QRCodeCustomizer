@@ -13,8 +13,8 @@ In the root folder of the project run
 
 `npm run dev`
 
-The project will be reacheable in your browser at localhost:5173
+The project will be reachable in your browser at localhost:5173
 
 ## online demo
 
-Try it [here](https://gcoro.github.io/QRCodeCustomizer/)
+Try it here > [github pages](https://gcoro.github.io/QRCodeCustomizer/)

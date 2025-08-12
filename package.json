@@ -1,4 +1,5 @@
 {
+  "homepage": "https://gcoro.github.io/QRCodeCustomizer",
   "name": "qrcode-customizer",
   "private": true,
   "version": "2.0.0",
@@ -7,11 +8,13 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-json-view-lite": "^2.4.2",
     "react-qrcode-logo": "../react-qrcode-logo",
     "vite-plugin-node-polyfills": "^0.24.0"
   },
@@ -23,6 +26,7 @@
     "eslint": "^9.32.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "gh-pages": "^6.1.1",
     "globals": "^16.3.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.0",
