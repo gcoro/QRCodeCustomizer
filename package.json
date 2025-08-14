@@ -15,7 +15,7 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-json-view-lite": "^2.4.2",
-    "react-qrcode-logo": "../react-qrcode-logo",
+    "react-qrcode-logo": "4.0.0",
     "vite-plugin-node-polyfills": "^0.24.0"
   },
   "devDependencies": {
