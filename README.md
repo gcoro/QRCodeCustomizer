@@ -7,6 +7,8 @@ Built using React + TypeScript + Vite
 
 ## running the example
 
+Use node 22
+
 In the root folder of the project run
 
 `npm install`

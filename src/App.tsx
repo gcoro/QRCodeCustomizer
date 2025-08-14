@@ -122,7 +122,7 @@ const App: React.FC = () => {
                 type='range'
                 handleChange={handleChange}
                 min={0}
-                max={20}
+                max={50}
                 step={1}
                 defaultValue={0}
               />
@@ -303,13 +303,13 @@ const App: React.FC = () => {
           <div style={{
             marginLeft: '15px',
             width: 750,
-            whiteSpace: "pre-wrap",
-            wordBreak: "break-word",
-            overflowWrap: "anywhere",
-            maxWidth: "100%",
+            // whiteSpace: "pre-wrap",
+            // wordBreak: "break-word",
+            // overflowWrap: "anywhere",
+            // maxWidth: "100%",
           }}>
-            <p>State snapshot (debug purposes)</p>
-            <JsonView data={state} style={{ marginBottom: 40 }} clickToExpandNode={true} shouldExpandNode={collapseAllNested} />
+            <p>State snapshot (for debug)</p>
+            <JsonView data={state} clickToExpandNode={true} shouldExpandNode={collapseAllNested} />
           </div>
         </div>
       </div>
